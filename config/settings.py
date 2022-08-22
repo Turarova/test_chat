@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
     # libs
     'rest_framework',
-    'channels',
+    # 'channels',
 ]
 
 MIDDLEWARE = [

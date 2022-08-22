@@ -9,15 +9,15 @@ class Room(models.Model):
         ('GR', 'GROUP'),
         ('DM', 'DIRECT'),
     ]
-    user = models.ManyToManyField()
+    user = models.ManyToManyField(User, related_name='room')
     image = models.ImageField(null=True, upload_to='chat_images')
     description = models.TextField(blank=True)
     type = models.CharField(max_length=10, choices=TYPES)
 
 
 class Message(models.Model):
-    user = models.ForeignKey(User, related_name='messages')
-    room = models.ForeignKey(Room, related_name='messages')
+    user = models.ForeignKey(User, related_name='messages', on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, related_name='messages', on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -4,5 +4,5 @@ python-decouple==3.6
 psycopg2-binary==2.9.3
 
 # chat-libs
-channels==3.0.5
+# channels==3.0.5
 

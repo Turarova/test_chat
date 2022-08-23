@@ -1,0 +1,7 @@
+from django.urls import re_path
+from . import consumers
+# from djangochannelsrestframework.consumers import 
+
+websocket_urlpatterns = [
+    re_path('ws/', consumers.ChatViewSet.as_asgi()),
+]

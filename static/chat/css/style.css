@@ -1,3 +1,30 @@
-body {
-    background-color: red;
+#main {
+    align-items: center;
+    background-color: sandybrown;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#chat-window {
+    align-self: center;
+    width: 700px;
+    height: 200px;
+    font-size: xx-large;
+    background-color: aquamarine;
+}
+
+.message-wrapper {
+    background-color: rebeccapurple;
+    margin: 4px;
+    padding: 1px;
+
+    border: 2px red solid;
+    border-radius: 8px;
+}
+
+.message-text {
+    font-size: medium;
 }

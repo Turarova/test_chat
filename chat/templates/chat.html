@@ -7,19 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="stylesheet" href="{% static 'chat/css/style.css' %}">
+    
     <!-- TEST ZONE -->
     <!-- <link rel="stylesheet" href="/Users/bbch/Notes/Projects/Chat/staticfiles/chat/css/style.css"> -->
 
 </head>
 <body>
-    <div class="main">
-        <div class="chat-window">
-            
+    <div id="main">
+        <div id="chat-window">
+            <span class="message-wrapper"> 
+                <span class="message-text"> Hello, world </span>     
+            </span>
         </div>
 
         <form action="" method="post">
-            <input class="message-field" type="text">  </input>
-            <input class="message-send-btn" type="button" onclick="">
+            <input id="message-field" type="text">  </input>
+            <script src="{% static 'chat/js/send_msg.js' %}"></script>
+            <input class="message-send-btn" type="button" onclick="send_msg()">
         </form>
     </div>
 </body>

@@ -1,22 +1,11 @@
 function send_msg() {
     console.log('yee')
-    let socket = new WebSocket('ws://127.0.0.1:9090');
-    socket.onopen = (event) => {
-        let msg_field = document.getElementById("message-field");
-        msg_field.get
-
-        socket.send('Heeey');
-    }
-    socket.onmessage = (event) => {
-        console.log(event.data)
-    }
+    let socket = new WebSocket('ws://127.0.0.1:8000/ws/');
 
     socket.onopen = function(e) {
-        console.log("[open] Соединение установлено");
-        console.log("Отправляем данные на сервер");
-        let info = {hello: "world"};
+        let info = {hello: "world", request_id: 2, action: 'post'};
         let json = JSON.stringify(info);
-        console.log(json);
+        console.log("DATA: ", json);
         socket.send(json);
       };
       

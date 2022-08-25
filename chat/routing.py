@@ -3,5 +3,5 @@ from . import consumers
 # from djangochannelsrestframework.consumers import 
 
 websocket_urlpatterns = [
-    re_path('ws/', consumers.ChatViewSet.as_asgi()),
+    re_path('ws/chat/', consumers.MessageConsumer.as_asgi()),
 ]

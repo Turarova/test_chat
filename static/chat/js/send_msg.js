@@ -3,8 +3,8 @@ function send_msg() {
     let socket = new WebSocket('ws://127.0.0.1:8000/ws/chat/');
 
     socket.onopen = function(e) {
-        // let info = {hello: "world", request_id: 2, action: 'create_message'};
-        let info = {action: 'create_message', message: 'heya', user: 1, request_id: 299, 'hren': 299};
+        socket.send(JSON.stringify({action: 'subscribe_to_send_message', request_id: 299}))
+        let info = {action: 'create_message', message: 'heya', user: 1, request_id: 299};
         let json = JSON.stringify(info);
         console.log("DATA: ", json);
         socket.send(json);

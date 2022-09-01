@@ -41,7 +41,7 @@ class FullConsumer(ObserverModelInstanceMixin, GenericAsyncAPIConsumer):
     @action()
     async def create_message(self, message, **kwargs):
         """ Создаем сообщения и сохраняем в бд """
-
+        room: Room = await self.get_room(pk=self.room_subscribe)
         user = await database_sync_to_async(User.objects.get)(
             id = kwargs["user"]
         )

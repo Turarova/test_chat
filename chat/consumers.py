@@ -46,6 +46,7 @@ class FullConsumer(ObserverModelInstanceMixin, GenericAsyncAPIConsumer):
             id = kwargs["user"]
         )
         await database_sync_to_async(Message.objects.create)(
+            room = room,
             user = user,
             text = message
         )

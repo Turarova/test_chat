@@ -93,3 +93,8 @@ class FullConsumer(ObserverModelInstanceMixin, GenericAsyncAPIConsumer):
     @database_sync_to_async
     def current_users(self, room: Room):
         return [UserSerializer(user).data for user in room.user.all()]
+
+
+    @database_sync_to_async
+    def get_room(self, pk: int) -> Room:
+        return Room.objects.get(pk=pk)

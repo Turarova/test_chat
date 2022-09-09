@@ -1,4 +1,4 @@
 # Test_chat
-> Тестовый чат
+> Тестовый чат, в процессе создания
 ## Библиотека:
 * djangochannelsrestframework
